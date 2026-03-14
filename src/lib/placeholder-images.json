@@ -1,3 +1,46 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero",
+      "description": "Usine de travail de l'inox",
+      "imageUrl": "https://picsum.photos/seed/sazoumhero/1920/1080",
+      "imageHint": "metal factory"
+    },
+    {
+      "id": "portfolio1",
+      "description": "Fabrication métallique sur mesure",
+      "imageUrl": "https://picsum.photos/seed/sazoum1/600/400",
+      "imageHint": "metal fabrication"
+    },
+    {
+      "id": "portfolio2",
+      "description": "Structure en acier inoxydable",
+      "imageUrl": "https://picsum.photos/seed/sazoum2/600/400",
+      "imageHint": "stainless steel"
+    },
+    {
+      "id": "portfolio3",
+      "description": "Chaudronnerie industrielle",
+      "imageUrl": "https://picsum.photos/seed/sazoum3/600/400",
+      "imageHint": "industrial equipment"
+    },
+    {
+      "id": "portfolio4",
+      "description": "Cuisine professionnelle en inox",
+      "imageUrl": "https://picsum.photos/seed/sazoum4/600/400",
+      "imageHint": "commercial kitchen"
+    },
+    {
+      "id": "portfolio5",
+      "description": "Soudure de précision",
+      "imageUrl": "https://picsum.photos/seed/sazoum5/600/400",
+      "imageHint": "welding"
+    },
+    {
+      "id": "portfolio6",
+      "description": "Détails de construction",
+      "imageUrl": "https://picsum.photos/seed/sazoum6/600/400",
+      "imageHint": "construction detail"
+    }
+  ]
 }
