@@ -44,7 +44,7 @@ export default function Header() {
           <div className="flex-shrink-0">
             <Link href="/" className="transition-transform hover:scale-105 block">
               <Image
-                src="/logo.png"
+                src="/Untitled.png"
                 alt="Sazoum Inox Logo"
                 width={866}
                 height={757}
