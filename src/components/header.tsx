@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -35,14 +36,21 @@ export default function Header() {
     <header
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-500 ease-in-out",
-        isScrolled ? "bg-background/90 shadow-md backdrop-blur-sm" : "bg-transparent"
+        isScrolled ? "bg-background/80 shadow-md backdrop-blur-sm" : "bg-transparent"
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center">
+        <div className="flex h-20 items-center justify-between">
           <div className="flex-shrink-0">
-            <Link href="/" className="text-2xl font-bold text-primary transition-transform hover:scale-105">
-              SAZOUM<span className="text-accent">INOX</span>
+            <Link href="/" className="transition-transform hover:scale-105 block">
+              <Image
+                src="/logo.png"
+                alt="Sazoum Inox Logo"
+                width={866}
+                height={757}
+                priority
+                className="h-16 w-auto"
+              />
             </Link>
           </div>
           
