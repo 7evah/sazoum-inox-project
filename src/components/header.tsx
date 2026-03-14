@@ -35,13 +35,13 @@ export default function Header() {
     <header
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
-        isScrolled ? "bg-background/80 shadow-md backdrop-blur-sm" : "bg-transparent"
+        isScrolled ? "bg-background/95 shadow-md backdrop-blur-sm border-b" : "bg-transparent"
       )}
     >
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="text-2xl font-bold text-primary transition-transform hover:scale-105">
-            SAZOUM INOX
+            SAZOUM<span className="text-accent">INOX</span>
           </Link>
           <nav className="hidden md:flex items-center space-x-2">
             {navItems.map((item) => (
@@ -71,8 +71,8 @@ export default function Header() {
         </div>
       </div>
       {isOpen && (
-        <div className="md:hidden bg-background/95 pb-4">
-          <nav className="flex flex-col items-center space-y-4">
+        <div className="md:hidden bg-background/95 pb-4 border-t">
+          <nav className="flex flex-col items-center space-y-4 pt-4">
             {navItems.map((item) => (
               <a
                 key={item.label}
@@ -83,7 +83,7 @@ export default function Header() {
                 {item.label}
               </a>
             ))}
-            <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 w-4/5">
+            <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 w-4/5 mt-4">
               <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>Nous Contacter</a>
             </Button>
           </nav>

@@ -17,16 +17,16 @@ export default function Hero() {
           data-ai-hint={heroImage.imageHint}
         />
       )}
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-black/60" />
       <div className="relative z-10 p-4 max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg">
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg !leading-tight">
           SAZOUM INOX: L'Excellence de l'Inox au Maroc
         </h1>
-        <p className="mt-6 text-lg md:text-xl max-w-2xl mx-auto drop-shadow-md">
+        <p className="mt-6 text-lg md:text-xl max-w-3xl mx-auto drop-shadow-md text-white/90">
           Votre partenaire de confiance pour la chaudronnerie, la construction, et tous vos besoins en acier inoxydable à Mohammedia.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground border-primary transition-transform hover:scale-105 w-full sm:w-auto">
+          <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground border-accent transition-transform hover:scale-105 w-full sm:w-auto">
             <a href="#services">Découvrir nos services</a>
           </Button>
           <Button asChild size="lg" variant="outline" className="bg-transparent text-white border-white hover:bg-white hover:text-primary transition-transform hover:scale-105 w-full sm:w-auto">

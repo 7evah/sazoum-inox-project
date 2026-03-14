@@ -1,7 +1,7 @@
 import { HardHat, Package, Wrench } from "lucide-react";
 import {
   Card,
-  CardDescription,
+  CardContent,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -32,24 +32,26 @@ export default function Services() {
           <h2 className="text-3xl md:text-4xl font-bold text-primary">
             Nos Services
           </h2>
-          <p className="text-lg text-muted-foreground mt-2">
+          <p className="text-lg text-muted-foreground mt-2 max-w-2xl mx-auto">
             Des solutions complètes et professionnelles pour tous vos projets en inox.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="text-center shadow-lg hover:shadow-xl hover:-translate-y-2 transition-transform duration-300">
+            <Card key={index} className="text-center shadow-lg hover:shadow-xl hover:-translate-y-2 transition-transform duration-300 flex flex-col">
               <CardHeader className="items-center">
-                <div className="p-4 bg-primary/10 rounded-full mb-4">
-                   <service.icon className="h-10 w-10 text-primary" />
+                <div className="p-4 bg-accent/10 rounded-full mb-4">
+                   <service.icon className="h-10 w-10 text-accent" />
                 </div>
                 <CardTitle className="text-xl font-semibold text-primary">
                   {service.title}
                 </CardTitle>
               </CardHeader>
-              <CardDescription className="px-6 pb-8 text-base">
-                {service.description}
-              </CardDescription>
+              <CardContent className="flex-grow px-6 pb-8">
+                <p className="text-muted-foreground">
+                  {service.description}
+                </p>
+              </CardContent>
             </Card>
           ))}
         </div>
