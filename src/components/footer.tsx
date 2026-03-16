@@ -23,7 +23,7 @@ export default function Footer() {
                   alt="Sazoum Inox Logo"
                   width={120}
                   height={105}
-                  className="filter invert(1) brightness(1.2)"
+                  className="invert"
                 />
               </Link>
             </div>
