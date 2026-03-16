@@ -18,13 +18,13 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="mb-4">
               <Link href="/">
-                <Image
-                  src="/Untitled.png"
-                  alt="Sazoum Inox Logo"
-                  width={120}
-                  height={105}
-                  className="invert"
-                />
+              <Image
+               src="/Untitled.png"
+               alt="Sazoum Inox Logo"
+               width={120}
+               height={105}
+               className="invert brightness-0 invert" 
+              />
               </Link>
             </div>
             <p className="text-sm opacity-80 max-w-sm">
