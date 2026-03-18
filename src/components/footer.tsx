@@ -62,9 +62,17 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="h-5 w-5 mt-0.5 flex-shrink-0" />
-                <span className="opacity-80">
-                  06 61 42 55 38 / 05 23 32 13 13
-                </span>
+                <div className="flex flex-col gap-1">
+                  <a href="tel:0661425538" className="opacity-80 hover:opacity-100 hover:underline">
+                    06 61 42 55 38
+                  </a>
+                  <a href="tel:0523332113" className="opacity-80 hover:opacity-100 hover:underline">
+                    05 23 32 13 13
+                  </a>
+                  <a href="tel:0678592506" className="opacity-80 hover:opacity-100 hover:underline">
+                    06 78 59 25 06
+                  </a>
+                </div>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="h-5 w-5 mt-0.5 flex-shrink-0" />
