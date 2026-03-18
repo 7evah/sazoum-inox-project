@@ -45,13 +45,38 @@ export function ContactForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast({
-      title: "Message Envoyé!",
-      description: "Nous avons bien reçu votre message et nous vous répondrons bientôt.",
-    });
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      const response = await fetch("https://formbold.com/s/9k2pO", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message Envoyé!",
+          description: "Nous avons bien reçu votre message et nous vous répondrons bientôt.",
+        });
+        form.reset();
+      } else {
+        toast({
+          title: "Erreur de soumission",
+          description: "Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.error("Failed to submit form:", error);
+      toast({
+        title: "Erreur de réseau",
+        description: "Impossible d'envoyer le message. Veuillez vérifier votre connexion internet.",
+        variant: "destructive",
+      });
+    }
   }
 
   return (
