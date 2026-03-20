@@ -9,7 +9,7 @@ export default function Hero() {
     <section id="hero" className="relative h-screen min-h-[700px] flex items-center justify-center text-center text-white">
       {heroImage && (
         <Image
-          src='/balcony.jpeg'
+          src='/balcony-enhanced.png'
           alt={heroImage.description}
           fill
           priority
