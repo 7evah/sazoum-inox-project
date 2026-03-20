@@ -16,13 +16,13 @@ const portfolioItems = [
     id: 'portfolio-2',
     title: 'Aménagement intérieur extérieur',
     description: 'Solutions complètes d\'aménagement pour sublimer vos espaces intérieurs et extérieurs avec des matériaux nobles et une finition parfaite.',
-    imageUrl: '/collage-ex-in2.png',
+    imageUrl: '/collage-ex-in3-2.png',
   },
   {
     id: 'portfolio-3',
     title: 'Menuiserie tous types',
     description: 'Créations de menuiserie sur mesure pour tous types de bois et matériaux, répondant aux exigences les plus strictes en matière de qualité et d\'esthétique.',
-    imageUrl: 'https://images.unsplash.com/photo-1610996884610-8588ce35eaec?q=80&w=800&auto=format&fit=crop',
+    imageUrl: '/talt.jpg',
   }
 ];
 
