@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
+import WhatsAppWidget from '@/components/whatsapp-widget';
 
 export const metadata: Metadata = {
   title: "SAZOUM INOX - Spécialiste de l'inox au Maroc",
@@ -25,6 +26,7 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased">
         {children}
+        <WhatsAppWidget  />
         <Toaster />
       </body>
     </html>

@@ -35,8 +35,8 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-500 ease-in-out",
-        isScrolled ? "bg-background/80 shadow-md backdrop-blur-sm" : "bg-transparent"
+        "fixed top-0 left-0 right-0 z-50 w-full transition-all duration-500 ease-in-out",
+        isScrolled ? "bg-background/80 shadow-md backdrop-blur-sm" : "bg-gradient-to-b from-black/60 to-transparent py-2"
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -49,7 +49,10 @@ export default function Header() {
                 width={866}
                 height={757}
                 priority
-                className="h-16 w-auto"
+                className={cn(
+                  "h-16 w-auto transition-all duration-500",
+                  !isScrolled && "brightness-0 invert"
+                )}
               />
             </Link>
           </div>
@@ -61,7 +64,12 @@ export default function Header() {
                   key={item.label}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="px-4 py-2 text-foreground/80 hover:text-primary font-medium transition-colors"
+                  className={cn(
+                    "px-4 py-2 font-medium transition-colors",
+                    isScrolled 
+                      ? "text-foreground/80 hover:text-primary" 
+                      : "text-white/90 hover:text-white"
+                  )}
                 >
                   {item.label}
                 </a>
@@ -70,7 +78,12 @@ export default function Header() {
           </div>
 
           <div className="hidden md:flex items-center flex-shrink-0">
-            <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
+            <Button asChild className={cn(
+              "transition-colors",
+              isScrolled 
+                ? "bg-accent text-accent-foreground hover:bg-accent/90" 
+                : "bg-white text-black hover:bg-white/90"
+            )}>
               <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>Nous Contacter</a>
             </Button>
           </div>
@@ -81,6 +94,7 @@ export default function Header() {
               size="icon"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
+              className={cn(!isScrolled && "text-white hover:text-black")}
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>

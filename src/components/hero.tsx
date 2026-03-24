@@ -1,39 +1,121 @@
+"use client";
+
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+  type CarouselApi,
+} from "@/components/ui/carousel";
+import { cn } from "@/lib/utils";
+
+// We will duplicate the hero image to demonstrate the slider. In a real app, these would be distinct images.
+const heroImages = [
+  { id: 1, src: '/balcony-enhanced.png', alt: 'Sazoum Inox Hero 1' },
+  { id: 2, src: '/slides1.png', alt: 'Sazoum Inox Hero 2' },
+  { id: 3, src: '/slides5vest.png', alt: 'Sazoum Inox Hero 3' },
+];
 
 export default function Hero() {
-  const heroImage = PlaceHolderImages.find(p => p.id === 'hero');
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCurrent(api.selectedScrollSnap());
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
 
   return (
-    <section id="hero" className="relative h-screen min-h-[700px] flex items-center justify-center text-center text-white">
-      {heroImage && (
-        <Image
-          src='/balcony-enhanced.png'
-          alt={heroImage.description}
-          fill
-          priority
-          className="object-cover"
-          data-ai-hint={heroImage.imageHint}
-        />
-      )}
-      <div className="absolute inset-0 bg-black/60" />
-      <div className="relative z-10 p-4 max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg !leading-tight">
-          SAZOUM INOX: L'Excellence de l'Inox au Maroc
-        </h1>
-        <p className="mt-6 text-lg md:text-xl max-w-3xl mx-auto drop-shadow-md text-white/90">
-          Votre partenaire de confiance pour la chaudronnerie, la construction, et tous vos besoins en acier inoxydable à Mohammedia.
-        </p>
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground border-accent transition-transform hover:scale-105 w-full sm:w-auto">
-            <a href="#services">Découvrir nos services</a>
-          </Button>
-          <Button asChild size="lg" variant="outline" className="bg-transparent text-white border-white hover:bg-white hover:text-primary transition-transform hover:scale-105 w-full sm:w-auto">
-            <a href="#contact">Demander un devis</a>
-          </Button>
+    <section id="hero" className="relative h-[85vh] min-h-[600px] w-full bg-black overflow-hidden">
+      <Carousel
+        setApi={setApi}
+        opts={{
+          loop: true,
+        }}
+        className="w-full h-full"
+      >
+        <CarouselContent className="h-full ml-0">
+          {heroImages.map((image, index) => (
+            <CarouselItem key={image.id} className="relative h-[85vh] min-h-[600px] w-full pl-0 overflow-hidden">
+              <div 
+                className="absolute w-full h-[120%] -top-[10%]"
+                style={{ transform: `translateY(${scrollY * 0.5}px)` }}
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  priority={index === 0}
+                  className="object-cover"
+                />
+              </div>
+              <div className="absolute inset-0 bg-black/60 pointer-events-none" />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        
+        {/* Navigation Arrows */}
+        <div className="absolute inset-x-4 top-1/2 -translate-y-1/2 flex items-center justify-between z-20 pointer-events-none px-4 md:px-12">
+          <CarouselPrevious className="pointer-events-auto relative left-0 translate-y-0 h-10 w-10 md:h-12 md:w-12 bg-black/30 text-white border-white/20 hover:bg-black/50 hover:text-white transition-all backdrop-blur-sm" />
+          <CarouselNext className="pointer-events-auto relative right-0 translate-y-0 h-10 w-10 md:h-12 md:w-12 bg-black/30 text-white border-white/20 hover:bg-black/50 hover:text-white transition-all backdrop-blur-sm" />
         </div>
-      </div>
+
+        {/* Text Overlay - keeping it static over the slides */}
+        <div className="absolute inset-0 z-10 flex items-center justify-center text-center text-white pointer-events-none">
+          <div className="p-4 max-w-4xl mx-auto pointer-events-auto">
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg !leading-tight">
+              SAZOUM INOX: L'Excellence de l'Inox au Maroc
+            </h1>
+            <p className="mt-6 text-lg md:text-xl max-w-3xl mx-auto drop-shadow-md text-white/90">
+              Votre partenaire de confiance pour la chaudronnerie, la construction, et tous vos besoins en acier inoxydable à Mohammedia.
+            </p>
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground border-accent transition-transform hover:scale-105 w-full sm:w-auto">
+                <a href="#services">Découvrir nos services</a>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="bg-transparent text-white border-white hover:bg-white hover:text-primary transition-transform hover:scale-105 w-full sm:w-auto">
+                <a href="#contact">Demander un devis</a>
+              </Button>
+            </div>
+          </div>
+        </div>
+        
+        {/* Pagination Dots */}
+        <div className="absolute bottom-12 left-0 right-0 z-20 flex justify-center gap-3">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => api?.scrollTo(index)}
+              className={cn(
+                "h-2.5 rounded-full transition-all duration-300",
+                current === index ? "bg-white w-8" : "bg-white/50 w-2.5 hover:bg-white/80"
+              )}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+      </Carousel>
     </section>
   );
 }
