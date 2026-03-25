@@ -50,7 +50,7 @@ export default function Header() {
                 height={757}
                 priority
                 className={cn(
-                  "h-16 w-auto transition-all duration-500",
+                  "h-20 w-auto transition-all duration-500",
                   !isScrolled && "brightness-0 invert"
                 )}
               />

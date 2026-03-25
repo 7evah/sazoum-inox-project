@@ -76,7 +76,7 @@ export default function Hero() {
         </CarouselContent>
         
         {/* Navigation Arrows */}
-        <div className="absolute inset-x-4 top-1/2 -translate-y-1/2 flex items-center justify-between z-20 pointer-events-none px-4 md:px-12">
+        <div className="absolute inset-x-4 top-1/2 -translate-y-1/2 hidden md:flex items-center justify-between z-20 pointer-events-none px-4 md:px-12">
           <CarouselPrevious className="pointer-events-auto relative left-0 translate-y-0 h-10 w-10 md:h-12 md:w-12 bg-black/30 text-white border-white/20 hover:bg-black/50 hover:text-white transition-all backdrop-blur-sm" />
           <CarouselNext className="pointer-events-auto relative right-0 translate-y-0 h-10 w-10 md:h-12 md:w-12 bg-black/30 text-white border-white/20 hover:bg-black/50 hover:text-white transition-all backdrop-blur-sm" />
         </div>
@@ -84,11 +84,16 @@ export default function Hero() {
         {/* Text Overlay - keeping it static over the slides */}
         <div className="absolute inset-0 z-10 flex items-center justify-center text-center text-white pointer-events-none">
           <div className="p-4 max-w-4xl mx-auto pointer-events-auto">
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg !leading-tight">
-              SAZOUM INOX: L'Excellence de l'Inox au Maroc
+            <h1 className="flex flex-col items-center justify-center gap-1 md:gap-3 mb-4 animate-in fade-in slide-in-from-bottom-8 duration-1000">
+              <span className="text-5xl md:text-8xl font-black tracking-tighter uppercase text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-200 to-gray-400 drop-shadow-[0_0_25px_rgba(255,255,255,0.4)]">
+                SAZOUM INOX
+              </span>
+              <span className="text-xl md:text-4xl font-light tracking-widest text-white/90 drop-shadow-md uppercase mt-2">
+                L'Excellence de l'Inox au <strong className="font-bold text-white">Maroc</strong>
+              </span>
             </h1>
-            <p className="mt-6 text-lg md:text-xl max-w-3xl mx-auto drop-shadow-md text-white/90">
-              Votre partenaire de confiance pour la chaudronnerie, la construction, et tous vos besoins en acier inoxydable à Mohammedia.
+            <p className="mt-6 text-xl md:text-2xl font-light max-w-3xl mx-auto text-gray-300 drop-shadow-md animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-300 fill-mode-both leading-relaxed">
+              Votre partenaire de confiance pour la <strong className="font-semibold text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">chaudronnerie</strong>, la <strong className="font-semibold text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">construction</strong>, et tous vos besoins en <strong className="font-semibold text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">acier inoxydable</strong> à Mohammedia.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground border-accent transition-transform hover:scale-105 w-full sm:w-auto">
