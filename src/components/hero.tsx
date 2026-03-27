@@ -17,7 +17,7 @@ import { cn } from "@/lib/utils";
 // We will duplicate the hero image to demonstrate the slider. In a real app, these would be distinct images.
 const heroImages = [
   { id: 1, src: '/balcony-enhanced.png', alt: 'Sazoum Inox Hero 1' },
-  { id: 2, src: '/slides1.png', alt: 'Sazoum Inox Hero 2' },
+  { id: 2, src: '/slides-design1.png', alt: 'Sazoum Inox Hero 2' },
   { id: 3, src: '/slides5vest.png', alt: 'Sazoum Inox Hero 3' },
 ];
 
@@ -83,7 +83,7 @@ export default function Hero() {
 
         {/* Text Overlay - keeping it static over the slides */}
         <div className="absolute inset-0 z-10 flex items-center justify-center text-center text-white pointer-events-none">
-          <div className="p-4 max-w-4xl mx-auto pointer-events-auto">
+          <div className="p-4 max-w-4xl mx-auto pointer-events-none">
             <h1 className="flex flex-col items-center justify-center gap-1 md:gap-3 mb-4 animate-in fade-in slide-in-from-bottom-8 duration-1000">
               <span className="text-5xl md:text-8xl font-black tracking-tighter uppercase text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-200 to-gray-400 drop-shadow-[0_0_25px_rgba(255,255,255,0.4)]">
                 SAZOUM INOX
@@ -95,7 +95,7 @@ export default function Hero() {
             <p className="mt-6 text-xl md:text-2xl font-light max-w-3xl mx-auto text-gray-300 drop-shadow-md animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-300 fill-mode-both leading-relaxed">
               Votre partenaire de confiance pour la <strong className="font-semibold text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">chaudronnerie</strong>, la <strong className="font-semibold text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">construction</strong>, et tous vos besoins en <strong className="font-semibold text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">acier inoxydable</strong> à Mohammedia.
             </p>
-            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 pointer-events-auto">
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground border-accent transition-transform hover:scale-105 w-full sm:w-auto">
                 <a href="#services">Découvrir nos services</a>
               </Button>
