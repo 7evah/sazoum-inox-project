@@ -1,13 +1,15 @@
-import { Layers, Zap, DoorOpen, Paintbrush, ChefHat } from "lucide-react";
+"use client";
+
+import { PanelLeft, PlugZap, DoorOpen, PaintBucket, Utensils } from "lucide-react";
 
 const activites = [
   {
-    icon: Layers,
+    icon: PanelLeft,
     title: "Isolation & Cloisonnement",
     description: "Pose de cloisons sèches, isolation thermique et phonique.",
   },
   {
-    icon: Zap,
+    icon: PlugZap,
     title: "Installations Techniques",
     description: "Électricité, plomberie, chauffage, ventilation (CVC).",
   },
@@ -17,12 +19,12 @@ const activites = [
     description: "Pose de fenêtres, portes intérieures, escaliers.",
   },
   {
-    icon: Paintbrush,
+    icon: PaintBucket,
     title: "Finitions",
     description: "Revêtements de sols (carrelage, parquet), revêtements muraux, peinture.",
   },
   {
-    icon: ChefHat,
+    icon: Utensils,
     title: "Aménagements",
     description: "Installation de cuisine, salle de bain.",
   },
@@ -48,32 +50,40 @@ export default function DomainesActivite() {
             <strong className="text-foreground font-semibold">seconds œuvres</strong>.
           </p>
         </div>
+      </div>
 
-        {/* 5 activity cards — 3 per row, last 2 centered */}
-        <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
-          {activites.map((activite, index) => {
+      {/* Infinite horizontal marquee — full width, no container constraint */}
+      <div className="overflow-x-clip w-full py-4">
+        <div
+          className="flex gap-6 w-max"
+          style={{ animation: "domaines-marquee 22s linear infinite" }}
+          onMouseEnter={e => (e.currentTarget.style.animationPlayState = "paused")}
+          onMouseLeave={e => (e.currentTarget.style.animationPlayState = "running")}
+        >
+          {/* Render twice for seamless loop */}
+          {[...activites, ...activites].map((activite, index) => {
             const Icon = activite.icon;
             return (
               <div
                 key={index}
-                className="group w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex flex-col items-center text-center rounded-2xl border border-border bg-card hover:border-primary/30 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 overflow-hidden"
+                className="group flex flex-col items-center text-center rounded-2xl border border-border bg-card hover:border-primary/30 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 overflow-hidden w-64 flex-shrink-0"
               >
                 {/* Icon zone */}
-                <div className="w-full flex flex-col items-center pt-10 pb-8 px-8 bg-primary/[0.04] group-hover:bg-primary/[0.07] transition-colors duration-300">
-                  <div className="p-5 bg-primary/10 rounded-2xl mb-5 group-hover:bg-primary/15 transition-colors duration-300">
+                <div className="w-full flex flex-col items-center pt-8 pb-6 px-6 bg-primary/[0.04] group-hover:bg-primary/[0.07] transition-colors duration-300">
+                  <div className="p-4 bg-primary/10 rounded-2xl mb-4 group-hover:bg-primary/15 transition-colors duration-300">
                     <Icon
-                      className="h-14 w-14 text-primary transition-transform duration-500 group-hover:scale-110"
+                      className="h-12 w-12 text-primary transition-transform duration-500 group-hover:scale-110"
                       strokeWidth={1.4}
                     />
                   </div>
-                  <h3 className="text-xl font-extrabold text-primary tracking-tight">
+                  <h3 className="text-base font-extrabold text-primary tracking-tight leading-tight">
                     {activite.title}
                   </h3>
                 </div>
 
                 {/* Description */}
-                <div className="px-8 py-6">
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                <div className="px-6 py-5">
+                  <p className="text-xs text-gray-600 leading-relaxed">
                     {activite.description}
                   </p>
                 </div>
@@ -82,6 +92,13 @@ export default function DomainesActivite() {
           })}
         </div>
       </div>
+
+      <style>{`
+        @keyframes domaines-marquee {
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+      `}</style>
     </section>
   );
 }

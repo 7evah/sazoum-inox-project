@@ -2,6 +2,7 @@ import {
   Flame,
   Hammer,
   Sofa,
+  LayoutDashboard,
   HardHat,
   Laptop,
   CheckCircle2,
@@ -16,8 +17,44 @@ const CustomFlameIcon = ({ className }: { className?: string }) => (
 
 const services = [
   {
-    icon: CustomFlameIcon,
+    icon: Laptop,
     number: "01",
+    title: "Étude & Conception",
+    description:
+      "Accompagnement complet de votre projet, de l'analyse des besoins jusqu'à la modélisation finale.",
+    items: [
+      "Analyse des besoins",
+      "Étude technique approfondie",
+      "Mise en plan 2D & Modélisation 3D",
+    ],
+  },
+   {
+    icon: Sofa,
+    number: "02",
+    title: "Décoration Design & Agencement",
+    description:
+      "Mobilier et aménagements métalliques contemporains qui transforment vos espaces intérieurs et extérieurs.",
+    items: [
+      "Mobilier métallique design",
+      "Verrières atelier",
+      "Escaliers et aménagements sur mesure",
+    ],
+  },
+  {
+    icon: LayoutDashboard,
+    number: "03",
+    title: "Aménagement Intérieur & Extérieur",
+    description:
+      "Conception et aménagement sur mesure de vos espaces en acier inoxydable alliant design et fonctionnalité.",
+    items: [
+      "Mobilier, verrières et habillage mural sur mesure",
+      "Pergolas, tonnelles et abris extérieurs",
+      "Escaliers, terrasses et espaces outdoor",
+    ],
+  },
+  {
+    icon: CustomFlameIcon,
+    number: "04",
     title: "Chaudronnerie & Métallerie",
     description:
       "Fabrication industrielle de haute précision : structures, équipements et assemblages en acier inoxydable.",
@@ -29,7 +66,7 @@ const services = [
   },
   {
     icon: Hammer,
-    number: "02",
+    number: "05",
     title: "Ferronnerie d'Art",
     description:
       "Création artisanale d'éléments forgés mêlant savoir-faire traditionnel et esthétique contemporaine.",
@@ -40,20 +77,8 @@ const services = [
     ],
   },
   {
-    icon: Sofa,
-    number: "03",
-    title: "Décoration Design & Agencement",
-    description:
-      "Mobilier et aménagements métalliques contemporains qui transforment vos espaces intérieurs et extérieurs.",
-    items: [
-      "Mobilier métallique design",
-      "Verrières atelier",
-      "Escaliers et aménagements sur mesure",
-    ],
-  },
-  {
     icon: HardHat,
-    number: "04",
+    number: "06",
     title: "Travaux Divers & Maintenance",
     description:
       "Interventions rapides et fiables pour la serrurerie, la soudure sur site et toute réparation.",
@@ -61,18 +86,6 @@ const services = [
       "Serrurerie",
       "Soudure sur site",
       "Dépannage et réparation",
-    ],
-  },
-  {
-    icon: Laptop,
-    number: "05",
-    title: "Étude & Conception",
-    description:
-      "Accompagnement complet de votre projet, de l'analyse des besoins jusqu'à la modélisation finale.",
-    items: [
-      "Analyse des besoins",
-      "Étude technique approfondie",
-      "Mise en plan 2D & Modélisation 3D",
     ],
   },
 ];
