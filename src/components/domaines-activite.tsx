@@ -1,23 +1,30 @@
-import { Factory, Stethoscope, Building2 } from "lucide-react";
+import { Layers, Zap, DoorOpen, Paintbrush, ChefHat } from "lucide-react";
 
-const domaines = [
+const activites = [
   {
-    icon: Factory,
-    title: "Industriel",
-    description:
-      "Équipements et structures en inox pour les environnements industriels exigeants.",
+    icon: Layers,
+    title: "Isolation & Cloisonnement",
+    description: "Pose de cloisons sèches, isolation thermique et phonique.",
   },
   {
-    icon: Stethoscope,
-    title: "Médical",
-    description:
-      "Mobilier et équipements en acier inoxydable certifiés pour les milieux hospitaliers et médicaux.",
+    icon: Zap,
+    title: "Installations Techniques",
+    description: "Électricité, plomberie, chauffage, ventilation (CVC).",
   },
   {
-    icon: Building2,
-    title: "Bâtiment",
-    description:
-      "Menuiserie métallique, garde-corps, escaliers et verrières pour la construction et la rénovation.",
+    icon: DoorOpen,
+    title: "Menuiseries",
+    description: "Pose de fenêtres, portes intérieures, escaliers.",
+  },
+  {
+    icon: Paintbrush,
+    title: "Finitions",
+    description: "Revêtements de sols (carrelage, parquet), revêtements muraux, peinture.",
+  },
+  {
+    icon: ChefHat,
+    title: "Aménagements",
+    description: "Installation de cuisine, salle de bain.",
   },
 ];
 
@@ -37,19 +44,19 @@ export default function DomainesActivite() {
             Nos Domaines d'Activité
           </h2>
           <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            <strong className="text-foreground font-semibold">SAZOUM INOX</strong> met
-            à votre service, avec toutes les garanties de compétence.
+            Notre activité clé repose sur tous les travaux de{" "}
+            <strong className="text-foreground font-semibold">seconds œuvres</strong>.
           </p>
         </div>
 
-        {/* 3 domain cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {domaines.map((domaine, index) => {
-            const Icon = domaine.icon;
+        {/* 5 activity cards — 3 per row, last 2 centered */}
+        <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
+          {activites.map((activite, index) => {
+            const Icon = activite.icon;
             return (
               <div
                 key={index}
-                className="group flex flex-col items-center text-center rounded-2xl border border-border bg-card hover:border-primary/30 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 overflow-hidden"
+                className="group w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex flex-col items-center text-center rounded-2xl border border-border bg-card hover:border-primary/30 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 overflow-hidden"
               >
                 {/* Icon zone */}
                 <div className="w-full flex flex-col items-center pt-10 pb-8 px-8 bg-primary/[0.04] group-hover:bg-primary/[0.07] transition-colors duration-300">
@@ -59,15 +66,15 @@ export default function DomainesActivite() {
                       strokeWidth={1.4}
                     />
                   </div>
-                  <h3 className="text-2xl font-extrabold text-primary tracking-tight">
-                    {domaine.title}
+                  <h3 className="text-xl font-extrabold text-primary tracking-tight">
+                    {activite.title}
                   </h3>
                 </div>
 
                 {/* Description */}
-                <div className="px-8 py-7">
+                <div className="px-8 py-6">
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    {domaine.description}
+                    {activite.description}
                   </p>
                 </div>
               </div>

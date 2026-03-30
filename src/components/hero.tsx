@@ -14,6 +14,10 @@ import {
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500", "600"] });
+
 // We will duplicate the hero image to demonstrate the slider. In a real app, these would be distinct images.
 const heroImages = [
   { id: 1, src: '/balcony-enhanced.png', alt: 'Sazoum Inox Hero 1' },
@@ -88,12 +92,12 @@ export default function Hero() {
               <span className="text-5xl md:text-8xl font-black tracking-tighter uppercase text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-200 to-gray-400 drop-shadow-[0_0_25px_rgba(255,255,255,0.4)]">
                 SAZOUM INOX
               </span>
-              <span className="text-xl md:text-4xl font-light tracking-widest text-white/90 drop-shadow-md uppercase mt-2">
-                L'Excellence de l'Inox au <strong className="font-bold text-white">Maroc</strong>
+              <span className="text-xs sm:text-lg md:text-4xl font-light tracking-widest text-white/90 drop-shadow-md uppercase mt-2 whitespace-nowrap">
+                Innovation et l'excellence opérationnelle
               </span>
             </h1>
-            <p className="mt-6 text-xl md:text-2xl font-light max-w-3xl mx-auto text-gray-300 drop-shadow-md animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-300 fill-mode-both leading-relaxed">
-              Votre partenaire de confiance pour la <strong className="font-semibold text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">chaudronnerie</strong>, la <strong className="font-semibold text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">construction</strong>, et tous vos besoins en <strong className="font-semibold text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">acier inoxydable</strong> à Mohammedia.
+            <p className={cn("mt-6 text-[11px] sm:text-sm md:text-lg tracking-wider font-medium text-gray-200 max-w-3xl mx-auto drop-shadow-md animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-300 fill-mode-both leading-relaxed", montserrat.className)}>
+             Notre expertise et intégrité sont les deux piliers fondamentaux pour établir la confiance et s'engager dans un milieu professionnel d'excellence par tous dans le Maroc.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 pointer-events-auto">
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground border-accent transition-transform hover:scale-105 w-full sm:w-auto">
