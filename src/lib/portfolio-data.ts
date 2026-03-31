@@ -1,3 +1,7 @@
+export type MediaItem =
+  | { type: "image"; src: string }
+  | { type: "video"; embedSrc: string; title?: string };
+
 export type PortfolioItem = {
   id: string;
   category: string;
@@ -5,7 +9,7 @@ export type PortfolioItem = {
   description: string;
   details: string;
   coverImage: string;
-  images: string[];
+  media: MediaItem[];
   specs: { label: string; value: string }[];
 };
 
@@ -19,7 +23,12 @@ export const portfolioItems: PortfolioItem[] = [
     details:
       "Ce projet illustre notre savoir-faire en matière de fabrication d'équipements professionnels en acier inoxydable. Chaque pièce est conçue sur mesure pour répondre aux normes d'hygiène les plus strictes tout en offrant une esthétique contemporaine. Nos équipes ont assuré la conception, la fabrication en atelier et la pose complète sur site.",
     coverImage: "/cuisinety.jpeg",
-    images: ["/cuisinety.jpeg","/toiletcos.jpeg", "/enahnced-ketchen.png",  "/enhanced-toillet.png"],
+    media: [
+      { type: "image", src: "/cuisinety.jpeg" },
+      { type: "image", src: "/toiletcos.jpeg" },
+      { type: "image", src: "/enahnced-ketchen.png" },
+      { type: "image", src: "/enhanced-toillet.png" },
+    ],
     specs: [
       { label: "Matériaux", value: "Acier inoxydable 304 / 316L" },
       { label: "Finition", value: "Brossé satinée" },
@@ -35,12 +44,24 @@ export const portfolioItems: PortfolioItem[] = [
       "Solutions complètes d'aménagement pour sublimer vos espaces intérieurs et extérieurs avec des matériaux nobles et une finition parfaite.",
     details:
       "Un projet d'envergure combinant aménagements intérieurs et extérieurs entièrement réalisés en inox et acier. Verrières atelier, garde-corps, mobilier sur mesure et structures extérieures ont été conçus en cohérence esthétique totale. Chaque détail a été pensé pour garantir durabilité et élégance.",
-    coverImage: "/collage-ex-in3-2.png",
-    images: [
-      "/amenage2.jpeg",
-      "/outsidework-enhanced-garden.png",
-      "/exterieur-aminag3.jpeg",
-      "/inside-work-enhanced-stairs.png",
+    coverImage: "/amenageall6.png",
+    media: [
+      { type: "image", src: "/amenage2.jpeg" },
+      {
+        type: "video",
+        embedSrc:
+          "https://player.vimeo.com/video/1179022068?badge=0&autopause=0&player_id=0&app_id=58479",
+        title: "somework1",
+      },
+      { type: "image", src: "/outsidework-enhanced-garden.png" },
+      { type: "image", src: "/exterieur-aminag3.jpeg" },
+      {
+        type: "video",
+        embedSrc:
+          "https://player.vimeo.com/video/1179022103?badge=0&autopause=0&player_id=0&app_id=58479",
+        title: "somework1",
+      },
+      { type: "image", src: "/inside-work-enhanced-stairs.png" },
     ],
     specs: [
       { label: "Matériaux", value: "Inox, acier laqué, verre trempé" },
@@ -58,7 +79,12 @@ export const portfolioItems: PortfolioItem[] = [
     details:
       "Nos réalisations en menuiserie métallique couvrent une large gamme : escaliers hélicoïdaux, garde-corps design, balcons et structures de balustrades. Chaque ouvrage est fabriqué dans nos ateliers avec des équipements de précision avant d'être installé par nos équipes sur site.",
     coverImage: "/talt.jpg",
-    images: ["/talt.jpg", "/balcony-enhanced.png", "/balcony.jpeg", "/slides5vest.png"],
+    media: [
+      { type: "image", src: "/talt.jpg" },
+      { type: "image", src: "/mark_1493953463_i72.jpg" },
+      { type: "image", src: "/talta1.jpeg" },
+      { type: "image", src: "/slides5vest.png" },
+    ],
     specs: [
       { label: "Matériaux", value: "Acier, inox, aluminium" },
       { label: "Finition", value: "Galvanisé / Thermolaqué / Brossé" },

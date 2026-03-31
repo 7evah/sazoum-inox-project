@@ -34,7 +34,7 @@ export default function About() {
             </div>
             <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden border border-primary-foreground/15 shadow-2xl shadow-black/40">
               <Image
-                src="/profileabout.png"
+                src="/profilepictt.png"
                 alt="Mostafa SALHO — Directeur Général de Sazoum Inox"
                 fill
                 className="object-cover object-top"

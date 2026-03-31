@@ -44,7 +44,7 @@ export default function Header() {
           <div className="flex-shrink-0">
             <Link href="/" className="transition-transform hover:scale-105 block">
               <Image
-                src="/Untitled.png"
+                src="/Untitledt.png"
                 alt="Sazoum Inox Logo"
                 width={866}
                 height={757}
@@ -56,7 +56,7 @@ export default function Header() {
               />
             </Link>
           </div>
-          
+
           <div className="flex-1 flex items-center justify-center">
             <nav className="hidden md:flex items-center space-x-2">
               {navItems.map((item) => (
@@ -66,8 +66,8 @@ export default function Header() {
                   onClick={(e) => handleNavClick(e, item.href)}
                   className={cn(
                     "px-4 py-2 font-medium transition-colors",
-                    isScrolled 
-                      ? "text-foreground/80 hover:text-primary" 
+                    isScrolled
+                      ? "text-foreground/80 hover:text-primary"
                       : "text-white/90 hover:text-white"
                   )}
                 >
@@ -80,8 +80,8 @@ export default function Header() {
           <div className="hidden md:flex items-center flex-shrink-0">
             <Button asChild className={cn(
               "transition-colors",
-              isScrolled 
-                ? "bg-accent text-accent-foreground hover:bg-accent/90" 
+              isScrolled
+                ? "bg-accent text-accent-foreground hover:bg-accent/90"
                 : "bg-white text-black hover:bg-white/90"
             )}>
               <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>Nous Contacter</a>

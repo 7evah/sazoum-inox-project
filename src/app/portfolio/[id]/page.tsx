@@ -6,6 +6,7 @@ import { portfolioItems } from "@/lib/portfolio-data";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import PortfolioGallery from "@/components/portfolio-gallery";
 
 export function generateStaticParams() {
   return portfolioItems.map((item) => ({ id: item.id }));
@@ -55,32 +56,9 @@ export default async function PortfolioDetailPage({
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12">
 
-            {/* Left — image gallery + description */}
+            {/* Left — gallery + description */}
             <div>
-              {/* Main image */}
-              <div className="relative aspect-[16/9] rounded-2xl overflow-hidden mb-4 border border-border">
-                <Image
-                  src={item.images[0]}
-                  alt={item.title}
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-
-              {/* Thumbnail strip */}
-              {item.images.length > 1 && (
-                <div className="grid grid-cols-3 gap-3 mb-10">
-                  {item.images.slice(1).map((src, i) => (
-                    <div
-                      key={i}
-                      className="relative aspect-[4/3] rounded-xl overflow-hidden border border-border hover:border-primary/40 transition-colors"
-                    >
-                      <Image src={src} alt={`${item.title} ${i + 2}`} fill className="object-cover" />
-                    </div>
-                  ))}
-                </div>
-              )}
+              <PortfolioGallery media={item.media} title={item.title} />
 
               {/* Description */}
               <div className="inline-block bg-primary/10 px-4 py-1.5 rounded-full mb-5">
