@@ -28,16 +28,18 @@ const services = [
       "Mise en plan 2D & Modélisation 3D",
     ],
   },
-   {
+  {
     icon: Sofa,
     number: "02",
     title: "Décoration Design & Agencement",
     description:
-      "Mobilier et aménagements métalliques contemporains qui transforment vos espaces intérieurs et extérieurs.",
+      "Conception et agencement d'espaces sur mesure, alliant esthétique et fonctionnalité.",
     items: [
-      "Mobilier métallique design",
-      "Verrières atelier",
-      "Escaliers et aménagements sur mesure",
+      "Conseil en aménagement et design",
+      "Création de mobilier sur mesure",
+      "Décoration d'intérieurs",
+      "Aménagement pour espaces professionnels",
+      "Décoration intérieure avec une touche marocaine",
     ],
   },
   {
@@ -45,11 +47,13 @@ const services = [
     number: "03",
     title: "Aménagement Intérieur & Extérieur",
     description:
-      "Conception et aménagement sur mesure de vos espaces en acier inoxydable alliant design et fonctionnalité.",
+      "Transformation de vos espaces de vie en environnements élégants et fonctionnels, de la conception à la réalisation.",
     items: [
-      "Mobilier, verrières et habillage mural sur mesure",
-      "Pergolas, tonnelles et abris extérieurs",
-      "Escaliers, terrasses et espaces outdoor",
+      "Consultation et conception",
+      "Sélection des matériaux",
+      "Fabrication et fourniture",
+      "Coordination des travaux",
+      "Installation et finition",
     ],
   },
   {
