@@ -42,7 +42,7 @@ export default function About() {
               <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/80 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-5">
                 <p className="text-white font-extrabold text-lg tracking-tight leading-tight">
-                  Mostafa SALHO
+                  Mustapha ESALHI
                 </p>
                 <p className="text-white/60 text-xs font-medium tracking-wider uppercase mt-0.5">
                   Directeur Général
