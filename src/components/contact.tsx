@@ -83,7 +83,7 @@ export default function Contact() {
             {/* Map */}
             <div className="mt-8 rounded-xl overflow-hidden border border-border h-44 w-full">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.715220358571!2d-7.369839324536994!3d33.70558273744669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7b6d3c5e3c3c3%3A0x3c3c3c3c3c3c3c3c!2sMJG5%2BWH3%20Building%2C%20Mohammedia%2C%20Morocco!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3320.224401258763!2d-7.391075!3d33.677253199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7b700157a1b85%3A0xf4ac76c006057c0d!2sSazoum%20Inox!5e0!3m2!1sen!2sma!4v1775555165395!5m2!1sen!2sma"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
